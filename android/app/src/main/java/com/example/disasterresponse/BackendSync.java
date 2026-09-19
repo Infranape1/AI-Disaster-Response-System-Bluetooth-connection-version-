@@ -132,6 +132,15 @@ public class BackendSync {
      */
     public String locateAndRemember() {
 
+        // LAN discovery is only allowed when we are already in local mode.
+        String currentUrl = db.backendUrl();
+
+        if (!NetworkUtils.isLocalAddress(currentUrl)) {
+            Log.d(TAG, "Skipping LAN discovery because backend is public: "
+                    + currentUrl);
+            return currentUrl;
+        }
+
         BackendLocator.Found found =
                 BackendLocator.discover(context, DISCOVERY_TIMEOUT_MS);
 
@@ -342,7 +351,7 @@ public class BackendSync {
          * discovery can only ever find another LAN address, so it is
          * pointless (and slow) to run it while heading for a public one.
          */
-        if (EMULATOR_URL.equals(url) || NetworkUtils.isLocalAddress(url)) {
+        if (NetworkUtils.isLocalAddress(url)) {
 
             String discovered = locateAndRemember();
 

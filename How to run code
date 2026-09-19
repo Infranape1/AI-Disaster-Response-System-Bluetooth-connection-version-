@@ -1,0 +1,27 @@
+B. Internet connection through a tunnel
+
+Backend:
+
+cd backend
+
+py -3.13 -m venv .venv
+
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip
+
+python -m pip install -r requirements.txt
+
+python run_server.py
+
+Then click on the server: "INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)"
+
+
+
+New terminal in Cloudflare:
+
+dir cloudflared.exe
+
+.\cloudflared.exe tunnel --url http://localhost:8000
+
+Then click on the server:

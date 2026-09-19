@@ -195,14 +195,18 @@ public class EmergencyDb extends SQLiteOpenHelper {
     }
 
     /**
-     * Address of the main system.
+     * Public backend used by the Android app.
      *
-     * 10.0.2.2 is the host machine as seen from the Android emulator. On a
-     * real phone this must be the LAN address of the machine running the
-     * backend, which is why it is editable in Settings.
+     * The Render URL is the default so the app can communicate with the
+     * backend over the global Internet, including mobile data and
+     * different Wi-Fi networks.
      */
     public String backendUrl() {
-        return getMeta("backend_url", "http://10.0.2.2:8000/sync");
+
+        return getMeta(
+                "backend_url",
+                "https://ai-disaster-response-system-bluetooth.onrender.com/sync"
+        );
     }
 
     public void setBackendUrl(String url) {
@@ -213,7 +217,6 @@ public class EmergencyDb extends SQLiteOpenHelper {
 
         setMeta("backend_url", url.trim());
     }
-
 
     /* =====================================================
      * HUB
