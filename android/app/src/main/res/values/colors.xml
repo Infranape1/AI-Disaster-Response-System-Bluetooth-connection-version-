@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bg">#070A0F</color>
+    <color name="bg_elevated">#0E141C</color>
+    <color name="surface">#141C26</color>
+    <color name="surface_alt">#1B2632</color>
+    <color name="stroke">#26333F</color>
+    <color name="stroke_soft">#1E2A36</color>
+
+    <color name="red">#E03131</color>
+    <color name="red_dark">#8F1D1D</color>
+    <color name="red_deep">#3A1010</color>
+
+    <color name="amber">#F0A020</color>
+    <color name="amber_deep">#3A2A0C</color>
+
+    <color name="green">#28C76F</color>
+    <color name="green_deep">#0E3A22</color>
+
+    <color name="blue">#3B82F6</color>
+
+    <color name="text">#EAF0F6</color>
+    <color name="text_muted">#8B9BAC</color>
+    <color name="text_dim">#5E6E7E</color>
+
+    <color name="bubble_me">#1F4B8F</color>
+    <color name="bubble_other">#1B2632</color>
+
+    <color name="ic_launcher_background">#0E141C</color>
+
+</resources>
